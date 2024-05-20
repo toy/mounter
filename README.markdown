@@ -1,11 +1,11 @@
-# apfs-mounter
+# mounter
 
-As `diskutil mount` can't unlock APFS encrypted volumes the way it can Core Storage ones.
+As `diskutil mount` can't unlock APFS encrypted volumes the way it (most of the time) can Core Storage ones.
 
 # Usage
 
 ```sh
-apfs-mounter VOLUME-UUID
+mounter apfs|cs VOLUME-UUID
 ```
 
 # Build
@@ -17,5 +17,5 @@ xcodebuild
 # Install
 
 ```sh
-sudo cp build/Release/apfs-mounter /usr/local/bin
+sudo cp build/Release/mounter /usr/local/bin
 ```

@@ -1,14 +1,18 @@
 import Foundation
 import Security
 
-func getPassword(uuid: String) -> String? {
-  let query: [String: Any] = [
+func getPassword(type: String, uuid: String) -> String? {
+  var query: [String: Any] = [
     kSecClass as String: kSecClassGenericPassword,
     kSecAttrDescription as String: "Encrypted Volume Password",
     kSecAttrService as String: uuid,
-    kSecAttrAccount as String: uuid,
     kSecReturnData as String: true
   ]
+
+  // a different unknown uuid is set for account for core storage
+  if type == "apfs" {
+    query[kSecAttrAccount as String] = uuid
+  }
 
   var item: CFTypeRef?
   let status = SecItemCopyMatching(query as CFDictionary, &item)
@@ -28,10 +32,10 @@ func getPassword(uuid: String) -> String? {
   return password
 }
 
-func unlockNMount(uuid: String, password: String) -> Bool {
+func unlockNMount(type: String, uuid: String, password: String) -> Bool {
   let process = Process()
   process.executableURL = URL(fileURLWithPath: "/usr/sbin/diskutil")
-  process.arguments = ["apfs", "unlockVolume", uuid, "-stdinpassphrase"]
+  process.arguments = [type, "unlockVolume", uuid, "-stdinpassphrase"]
 
   let inputPipe = Pipe()
   process.standardInput = inputPipe
@@ -54,20 +58,26 @@ func unlockNMount(uuid: String, password: String) -> Bool {
   return process.terminationStatus == 0
 }
 
-if CommandLine.arguments.count != 2 {
-  print("Usage: \(CommandLine.arguments[0]) <uuid>")
+if CommandLine.arguments.count != 3 {
+  print("Usage: \(CommandLine.arguments[0]) apfs|cs <uuid>")
   exit(1)
 }
 
-let uuid = CommandLine.arguments[1]
+let type = CommandLine.arguments[1]
+if !["apfs", "cs"].contains(type) {
+  print("Type should be apfs or cs, got \(type)")
+  exit(1)
+}
 
-guard let password = getPassword(uuid: uuid)
+let uuid = CommandLine.arguments[2]
+
+guard let password = getPassword(type: type, uuid: uuid)
 else {
   print("Got no password for uuid \(uuid)")
   exit(1)
 }
 
-if !unlockNMount(uuid: uuid, password: password) {
+if !unlockNMount(type: type, uuid: uuid, password: password) {
   print("Failed to unlock the volume")
   exit(1)
 }

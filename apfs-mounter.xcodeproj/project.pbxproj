@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B2B1DB4B2BFA05D0009BCD88 /* apfs-mounter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "apfs-mounter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2B1DB4B2BFA05D0009BCD88 /* mounter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mounter"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B1DB4E2BFA05D0009BCD88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +41,7 @@
 		B2B1DB422BFA05D0009BCD88 = {
 			isa = PBXGroup;
 			children = (
-				B2B1DB4D2BFA05D0009BCD88 /* apfs-mounter */,
+				B2B1DB4D2BFA05D0009BCD88 /* mounter */,
 				B2B1DB4C2BFA05D0009BCD88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +49,25 @@
 		B2B1DB4C2BFA05D0009BCD88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B2B1DB4B2BFA05D0009BCD88 /* apfs-mounter */,
+				B2B1DB4B2BFA05D0009BCD88 /* mounter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B2B1DB4D2BFA05D0009BCD88 /* apfs-mounter */ = {
+		B2B1DB4D2BFA05D0009BCD88 /* mounter */ = {
 			isa = PBXGroup;
 			children = (
 				B2B1DB4E2BFA05D0009BCD88 /* main.swift */,
 			);
-			path = "apfs-mounter";
+			path = "mounter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B2B1DB4A2BFA05D0009BCD88 /* apfs-mounter */ = {
+		B2B1DB4A2BFA05D0009BCD88 /* mounter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2B1DB522BFA05D0009BCD88 /* Build configuration list for PBXNativeTarget "apfs-mounter" */;
+			buildConfigurationList = B2B1DB522BFA05D0009BCD88 /* Build configuration list for PBXNativeTarget "mounter" */;
 			buildPhases = (
 				B2B1DB472BFA05D0009BCD88 /* Sources */,
 				B2B1DB482BFA05D0009BCD88 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = "apfs-mounter";
-			productName = "apfs-mounter";
-			productReference = B2B1DB4B2BFA05D0009BCD88 /* apfs-mounter */;
+			name = "mounter";
+			productName = "mounter";
+			productReference = B2B1DB4B2BFA05D0009BCD88 /* mounter */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B2B1DB462BFA05D0009BCD88 /* Build configuration list for PBXProject "apfs-mounter" */;
+			buildConfigurationList = B2B1DB462BFA05D0009BCD88 /* Build configuration list for PBXProject "mounter" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B2B1DB4A2BFA05D0009BCD88 /* apfs-mounter */,
+				B2B1DB4A2BFA05D0009BCD88 /* mounter */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +263,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B2B1DB462BFA05D0009BCD88 /* Build configuration list for PBXProject "apfs-mounter" */ = {
+		B2B1DB462BFA05D0009BCD88 /* Build configuration list for PBXProject "mounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2B1DB502BFA05D0009BCD88 /* Debug */,
@@ -272,7 +272,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2B1DB522BFA05D0009BCD88 /* Build configuration list for PBXNativeTarget "apfs-mounter" */ = {
+		B2B1DB522BFA05D0009BCD88 /* Build configuration list for PBXNativeTarget "mounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2B1DB532BFA05D0009BCD88 /* Debug */,
